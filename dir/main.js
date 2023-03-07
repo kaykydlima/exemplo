@@ -1,5 +1,4 @@
-const produtosMaisVendidos = document.querySelector('.box-mais-vendidos-card')
-
+const produtosMaisVendidos = document.querySelector('.box-mais-vendidos-card');
 function criaHtml(data) {
     return `
         <div class="mais-vendidos__card">
@@ -13,12 +12,11 @@ function criaHtml(data) {
             </div>
             <button class="botao-produto">Comprar</button>
         </div>
-    `
+    `;
 }
-
 fetch('http://localhost:3000/produtos')
     .then(resp => resp.json())
     .then(data => {
-        data.forEach(elemento => produtosMaisVendidos.innerHTML += criaHtml(elemento))
-    })
-    .catch(e => alert('Não foi possível recuperar os produtos.'))
+    data.forEach((elemento) => produtosMaisVendidos.innerHTML += criaHtml(elemento));
+})
+    .catch(e => alert('Não foi possível recuperar os produtos.'));

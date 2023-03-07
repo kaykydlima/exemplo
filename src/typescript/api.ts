@@ -1,5 +1,7 @@
+import { Categoria, Cliente, Produto } from './modelo.js'
+
 const urlAPI = 'http://localhost:3000/'
-export const apiPost = (tipo, corpoAPI) => {
+export const apiPost = (tipo: string, corpoAPI: Categoria | Cliente | Produto) => {
     
     fetch(`${urlAPI}${tipo}`, {
         method: 'POST',

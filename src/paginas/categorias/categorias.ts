@@ -1,11 +1,11 @@
-import { criaCategoria } from '../modelo.js'
-import { apiPost } from '../consumoApi.js'
+import { Categoria } from '../../typescript/modelo.js'
+import { apiPost } from '../../typescript/api.js'
 
-const form = document.querySelector('#form-categoria')
-const nome = document.querySelector('#input-categoria')
-const corpoTabela = document.querySelector('#corpo-tabela')
+const form: HTMLFormElement = document.querySelector('#form-categoria')
+const nome: HTMLInputElement = document.querySelector('#input-categoria')
+const corpoTabela: Element = document.querySelector('#corpo-tabela')
 
-function criaHTML(data) {
+function criaHTML(data: Categoria) {
     return `
     <tr>
         <td>${data.nome}</td>
@@ -19,15 +19,13 @@ fetch('http://localhost:3000/categorias')
     .then(resp => resp.json())
     .then(data => {
         console.log(data)    
-        data.forEach(elemento => corpoTabela.innerHTML += criaHTML(elemento))
+        data.forEach((elemento: Categoria) => corpoTabela.innerHTML += criaHTML(elemento))
     })
     .catch(e => alert('Não foi possível recuperar as categorias'))
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    if(nome.value === 'Informática' || nome.value === 'Móveis' || nome.value === 'Livros')
-        apiPost(`categorias`, criaCategoria(nome.value))
-    else alert('Valor inválido')
+    apiPost('categorias', new Categoria(nome.value))
     nome.value = ''
     nome.focus()
 

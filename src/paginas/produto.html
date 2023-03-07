@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comex</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/style.css">
     <link rel="stylesheet" href="../assets/styles/menu.css">
+    <link rel="stylesheet" href="../assets/styles/produtos.css">
     <link rel="stylesheet" href="../assets/styles/rodape.css">
-    <link rel="stylesheet" href="../assets/styles/cadastro-produtos.css">
-    <script src="https://kit.fontawesome.com/0d76fadde4.js" crossorigin="anonymous"></script>
-    <script src="../assets/js/menu.js" defer></script>
-    <script src="../src/paginas/produtos.js" type="module" defer></script>
-    <script src="https://unpkg.com/imask"></script>
+    <link rel="stylesheet" href="../assets/styles/modal.css">
+    <link rel="stylesheet" href="../assets/styles/botaoCard.css">
+    <link rel="stylesheet" href="../assets/styles/produto.css">
+    <script src="https://kit.fontawesome.com/0d76fadde4.js" crossorigin="anonymous"></script>   
+    <title>Comex</title>
 </head>
-
 <body>
-    <!-- menu mobile -->
     <header class="cabecalho menu-mobile">
         <nav class="menu">
             <a href="../index.html" class="logo"><img src="../assets/svg/logo.svg" alt="Comex logo" class="logo"></a>
             <ul class="menu__lista menu__lista-disable">
                 <li class="menu__lista-item"><a href="../index.html">Home</a></li>
-                <li class="menu__lista-item"><a href="./categorias.html">Categorias</a></li>
-                <li class="menu__lista-item"><a href="./contato.html">Contato</a></li>
+                <li class="menu__lista-item">Categorias</li>
                 <li class="menu__lista-item">Buscar</li>
+                <li class="menu__lista-item">Contato</li>
                 <li class="menu__lista-item">Carrinho</li>
-                <li class="menu__lista-item"><a href="./clientes.html">Entrar</a></li>
+                <li class="menu__lista-item">Entrar</li>
             </ul>
             <button id="botao-menu" class="botao-menu"><img src="../assets/svg/menu.svg"></button>
         </nav>
         <div class="search-bar">
             <input type="search" name="" id="" placeholder="Pesquisar..." class="cabecalho__input">
-            <img src="./assets/svg/search.svg" alt="">
+            <img src="../assets/svg/search.svg" alt="">
         </div>
     </header>
     <!-- menu desktop -->
@@ -44,54 +41,38 @@
         <a href="../index.html" class="logo-mobile"><img src="../assets/svg/logo.svg" alt="Logo Comex"></a>
         <ul class="cabecalho__lista">
             <li class="cabecalho__lista-item"><a href="../index.html">Home</a></li>
-            <li class="cabecalho__lista-item"><a href="./categorias.html">Categorias</a></li>
-            <li class="cabecalho__lista-item"><a href="./contato.html">Contato</a></li>
+            <li class="cabecalho__lista-item">Categorias</li>
+            <li class="cabecalho__lista-item">Contato</li>
         </ul>
         <div class="box-cabecalho-interativos">
             <input type="search" name="" id="" placeholder="Pesquise..." class="input-pesquisa-mobile">
             <ul class="cabecalho__lista">
                 <li class="cabecalho__lista-item"><img src="../assets/svg/carrinho-compras.svg" alt="Carrinho de compras"></li>
-                <a href="./clientes.html">
-                    <li class="cabecalho__lista-item"><img src="../assets/svg/usuario.svg" alt="Perfil do usuário"></li>
-                </a>
+                <li class="cabecalho__lista-item"><img src="../assets/svg/usuario.svg" alt="Perfil do usuário"></li>
             </ul>
         </div>
     </header>
     <main>
-        <div class="container">
-            <h1>Novo produto</h1>
-            <form action="" id="formulario">
-                <label for="nome">
-                    Nome:
-                    <input type="text" required id="nome" class="input">
-                </label>
-                <label for="preco">
-                    Preco:
-                    <input type="text" required id="preco" class="input" min="0">
-                </label>
-                <label for="qEstoque">
-                    Quantia em estoque:
-                    <input type="number" required id="qEstoque" class="input" min="0">
-                </label>
-                <label for="url">
-                    Imagem:
-                    <input type="text" required id="url" class="input" placeholder="https://imagem.com">
-                </label>
-                <label for="descricao">
-                    Descricão:
-                    <textarea name="" id="descricao" required cols="30" rows="10"></textarea>
-                </label>
-                <select name="teste" id="categoria" required>
-                    <option value="" selected>Selecione uma opção</option>
-                    <option value="1">Informática</option>
-                    <option value="2">Móveis</option>
-                    <option value="3">Livros</option>
-                </select>
-                <button type="submit" id="botao">Salvar <i class="fa-solid fa-floppy-disk"></i></button>
-            </form>
+        <div class="container-produto">
+            <img src="../assets/img/memoria-ram.png" alt="Placa mãe" class="img-produto">
+            <div class="container-produto__descricao">
+                <h1 class="nome--produto">Nome produto</h1>
+                <h3 class="descricao--produto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque doloribus, facilis animi officia laboriosam a ex, suscipit hic odit sequi aperiam tempora, unde reiciendis dolores perferendis labore tempore facere deserunt.</h3>
+                <div class="container-cep">
+                    <div class="campo-cep">
+
+                        <label for="cep">CEP:</label>
+                        <input type="number" placeholder="00000-000" id="cep" class="input-cep" min="0">
+                    </div>
+                    <button class="busca-cep">Pesquisar CEP</button>
+                </div>
+            </div>
         </div>
-    </main>
-    <!-- rodape -->
+        <div class="container-compra">
+            <button class="compra-produto">Comprar</button>
+        </div>
+
+    </main>    
     <footer class="rodape">
         <div class="esquerda">
             <a href="../index.html"><img src="../assets/svg/logo.svg" alt="Logo Comex" class="logo-rodape"></a>
@@ -101,7 +82,7 @@
                 <li class="rodape__lista-item"><a href="#"><img src="../assets/svg/linkedin.svg" alt=""></a></li>
             </ul>
         </div>
-
+        
         <div class="rodape__box direita">
             <ul class="box-lista lista-esquerda">
                 <li class="box-item">Promoções</li>
@@ -115,6 +96,6 @@
             </ul>
         </div>
     </footer>
+    <script src="../../typescript/menu.ts"></script>
 </body>
-
 </html>
